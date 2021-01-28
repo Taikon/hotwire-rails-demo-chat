@@ -11,8 +11,8 @@
   </p>
 <% end %>
 
-<div id="messages">
+<div id="messages" class="is-scrollable">
   <%= render @room.messages %>
 </div>
 
-<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>
+<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top", class: "message-bar" %>

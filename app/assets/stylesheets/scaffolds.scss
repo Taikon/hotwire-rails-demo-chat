@@ -1,3 +1,25 @@
+.is-scrollable {
+  overflow-y: visible;
+  overflow-x: hidden;
+  height: 500px;
+}
+
+// // Removes default scrollbar. Having already added a custom scrollbar on chats#show
+.is-scrollbarless::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+// Removes default scrollbar 
+.is-scrollbarless {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.message-bar {
+  width: 50%;
+  resize: vertical;
+}
+
 body {
   background-color: #fff;
   color: #333;

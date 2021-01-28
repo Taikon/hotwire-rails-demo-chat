@@ -1,14 +1,29 @@
 # Hotwire Rails Demo: Chat
 
-This is a slimmed-down repository for the Hotwire demo that used for [the announcement screencast](https://www.youtube.com/watch?v=eKY-QES1XQQ).
-
-It's a rough sketch of the very basics. Maybe we could improve it together?
-
-To setup, just run `./bin/setup`, then `./bin/rails server`, then hit `localhost:3000`.
-
-This demo application requires redis for websocket communication.
-To prepare redis using docker, please run the following command.
-
+# Hello Stimulus Tutorial
+[link](https://stimulus.hotwire.dev/handbook/hello-stimulus)
+1. `home.html.erb`
 ```
-docker run --rm -it -p 6379:6379 redis:latest
+  <div data-controller="hello">
+    <input data-hello-target="name" type="text">
+    <button data-action="click->hello#greet">Button</button>
+  </div>
 ```
+
+2. `hello_controller.js`
+```
+import { Controller } from 'stimulus'
+export default class extends  Controller {
+  action(){
+    ...
+  }
+  get getter(){
+    // this: idunno 
+    // nameTarget: the first matching element
+    // value: the value of the nameTarget
+    return this.nameTarget.value
+  }
+}
+```
+3. Run Through
+You activate a click event on an element. It calls the hello#greet action. The input you typed was marked as a data target for the hello-controller. Subsequently the input is used as a parameter for the greet action for the hello-controller. 
