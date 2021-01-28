@@ -1,21 +1,11 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  // connect(){
-  //   console.log("harro", this.element)
-  // }
-  // sayhi(){
-  //   console.log("hi", this.element)
-  // }
   static targets = ["name", "output"]
 
-  // greet(){
-  //   const element = this.nameTarget
-  //   const name = element.value
-  //   console.log(`Hi ${name}`)
-  // }
   greet(){
-    // console.log(`Hi ${this.name}`)
+    // .textContent is a DOM property (https://www.w3schools.com/jsref/prop_node_textcontent.asp)
+    // outputTarget was defined in your home.html.erb file as data-hello-target="output" then retrieved with static targets = ['output']
     this.outputTarget.textContent = `Hello, ${this.name}`
   }
   
