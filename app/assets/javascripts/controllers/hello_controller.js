@@ -1,13 +1,13 @@
 import { Controller } from 'stimulus'
 
-export default class extends  Controller {
+export default class extends Controller {
   // connect(){
   //   console.log("harro", this.element)
   // }
   // sayhi(){
   //   console.log("hi", this.element)
   // }
-  static targets = ["name"]
+  static targets = ["name", "output"]
 
   // greet(){
   //   const element = this.nameTarget
@@ -15,7 +15,8 @@ export default class extends  Controller {
   //   console.log(`Hi ${name}`)
   // }
   greet(){
-    console.log(`Hi ${this.name}`)
+    // console.log(`Hi ${this.name}`)
+    this.outputTarget.textContent = `Hello, ${this.name}`
   }
   
   get name(){
