@@ -57,14 +57,17 @@ You activate a click event on an element. It calls the hello#greet action. The i
 ```
 
 
-5. Actions
+5. Actions `method()   - Any method name will work` 
+
+6. Lifecycle Callbacks: They look like Actions, except Actions are stuff you define, whereas Lifecycle Callbacks are methods supplied by Stimulus. Both are methods though which is why they look so similar.
 ```
-  method()   - Any method name will work
-  connect()  - But, like connect(), are special
+initialize()	  Once, when the controller is first instantiated
+connect()	      Anytime the controller is connected to the DOM
+disconnect()	  Anytime the controller is disconnected from the DOM
 ```
 
 
-6. Events
+7. Events: Some elements have events attached by default. 
 ```
   click->
   submit->
@@ -72,7 +75,26 @@ You activate a click event on an element. It calls the hello#greet action. The i
 ```
 
 
+8. Attributes: If you defined `this.index` in your `initialize(){}`, you can use its value in your stimulus-controller.
 
+* But if you want to set a different value for each element, use the `value` static object property (`targets` is another static object property)
+
+```
+/slideshow.html.erb
+                                    // Here you set indexValue = 2
+  <div data-controller="slideshow" data-slideshow-index-value="2"> 
+
+/slideshow_controller.js
+  static values = { index: Number } // Here you retrieve indexValue
+```
+
+* This sets a fixed value
+```
+/slideshow_controller.js
+  initialize() {
+    this.index = 1                  // Here you set a fixed value to index
+  }                                 // It's not indexValue here. Instead it's index
+```
 
 
 
