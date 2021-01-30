@@ -1,7 +1,7 @@
-<%= form_with(model: room) do |form| %>
+<%= form_with(model: room, data: { action: "ajax:success->reset-form#reset" }) do |form| %>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, data: { target: "reset-form.message" } %>
   </div>
 
   <div class="actions">

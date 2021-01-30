@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "hellos/home"
   get "hellos/copy"
   get "hellos/slideshow"
+  get "hellos/content"
+  get "hellos/posts"
 
   # Hotwire example
   resources :rooms do
